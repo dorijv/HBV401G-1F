@@ -4,27 +4,29 @@ import static org.junit.Assert.*;
 
 class FlightControllerTest {
 
+    private Flight Flug;
     private FlightMock mockFlug;
 
     @Before
-    public void setUp{
+    public void setUp(){
 
         mockFlug = new FlightMock();
+        Flug = new Flight();
 
     }
 
     @After
-    public  void tearDown{
+    public  void tearDown(){
 
-        mockFlug = null;
+        Flug = null;
 
     }
 
 
     @Test
-    public void testAmount{
+    public void testAmount(){
 
-        assertEquals("Reykjavík“, mockFlug.getFlight(0).getDeparture());
+        assertEquals("Reykjavík", Flug.getFlightID(), Flug.getFlightDeparture()) ;
 
     }
 
