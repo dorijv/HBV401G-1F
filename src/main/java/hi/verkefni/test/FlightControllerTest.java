@@ -1,7 +1,7 @@
 package hi.verkefni.test;
 
 import org.junit.After;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
 
