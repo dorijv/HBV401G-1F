@@ -64,8 +64,8 @@ public class FlightControllerTest {
 
     @Test
     public void testRoute() {
-        assertNotNull(mockFlug.getFlightRoute("Reykjavík", "Akureyri"));
-        assertNull(mockFlug.getFlightRoute("New York", "Kyiv"));
+        assertNotNull("Reykjavík -> Akureyri", mockFlug.getFlightRoute("Reykjavík", "Akureyri"));
+        assertNull("New York -> Kyiv", mockFlug.getFlightRoute("New York", "Kyiv"));
     }
 
     // Bæta við fleirri testum, til dæmis date og tíma? Spyrja Marcelo
