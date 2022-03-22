@@ -11,7 +11,7 @@
  *  Alda    :   alda
  *  Ármann  :   ármann
  *  Halldór :   hjv6@hi.is
- *  Hrólfur :   hrolfurjul@gmail.com
+ *  Hrólfur :   hrolfur@hi.is
  *****************************************************************************/
 
 package hi.verkefni.test;
