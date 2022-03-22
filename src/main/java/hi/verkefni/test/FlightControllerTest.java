@@ -54,7 +54,7 @@ public class FlightControllerTest {
 
     @Test
     public void testDestination() {
-        assertEquals("Reykjavík -> Akureyri", "Akureyri",
+        assertEquals("Reykjavík -> Akureyri", "Akureyri2",
                 firstFlight.getFlightDestination());
         assertEquals("Akureyri -> Reykjavík", "Reykjavík",
                 secondFlight.getFlightDestination());
