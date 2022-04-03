@@ -1,3 +1,24 @@
+/*
+Forrit sem frumstillir gagnagrunn.
+
+Það vantar að implementa schema.sql uppsetningu, ef 1F.db er ekki til.
+
+Til að keyra:
+
+Búa til sqlite3 gagnagrunn 1F.db
+Keyra java -cp sqlite-jdbc-3.36.0.3.jar dbSetup.java 0 0
+
+Forritið býr til handahófskennd flug með random gildum. Hægt er að breyta 
+lista af áfangastöðum og lista af flugfélögum. Einnig er hægt að breyta gildinu á FASTI
+sem segir til um hversu mörg flug verða búin til.
+
+TODO:
+Frumstilla schema
+kommenta betur
+???
+
+*/
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
