@@ -13,8 +13,8 @@ CREATE TABLE Flights (
 );
 
 CREATE TABLE Bookings (
-	SSN VARCHAR(10),
-	FlightID CHAR(6),
+    SSN VARCHAR(10),
+    FlightID CHAR(6),
     departureTime DATETIME,
     lastName VARCHAR(30),
     firstName VARCHAR(30),
