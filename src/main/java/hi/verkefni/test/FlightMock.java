@@ -7,8 +7,8 @@
  *            stores objects of type Flight in an ArrayList.
  *
  *  Members :   Email
- *  Alda    :   alda
- *  Ármann  :   ármann
+ *  Alda    :   agp15@hi.is
+ *  Ármann  :   ars90@hi.is
  *  Halldór :   hjv6@hi.is
  *  Hrólfur :   hrolfur@hi.is
  *****************************************************************************/
@@ -21,16 +21,16 @@ public class FlightMock {
     private ArrayList<Flight> flights;
 
     /**
-     * Vantar
+     * Creates 3 entries in mock database object
      */
     public FlightMock() {
         flights = new ArrayList<>();
         // Breyta flightID
         flights.add( new Flight(1000, "Reykjavík", "Akureyri",
-                "31032022", "08:00") );
-        flights.add( new Flight(1000, "Akureyri", "Reykjavík",
-                "31032022", "18:00") );
-        flights.add( new Flight(1000, "Reykjavík", "Egilsstaðir",
+                "28032022", "08:00") );
+        flights.add( new Flight(1001, "Akureyri", "Reykjavík",
+                "29032022", "18:00") );
+        flights.add( new Flight(1002, "Reykjavík", "Egilsstaðir",
                 "31032022", "10:00") );
     }
 
@@ -44,6 +44,7 @@ public class FlightMock {
     public Flight getFlight( int i ) {
         return flights.get(i);
     }
+
 
     /**
      * Loops through all flights in arrayList.
@@ -64,3 +65,4 @@ public class FlightMock {
         return null;
     }
 }
+//interface sem mockhluturinn implementar, testa controllerinn,

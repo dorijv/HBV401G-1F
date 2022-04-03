@@ -7,8 +7,8 @@
  *            Using JUnit to automate testing.
  *
  *  Members :   Email
- *  Alda    :   alda
- *  Ármann  :   ármann
+ *  Alda    :   agp15@hi.is
+ *  Ármann  :   ars90@hi.is
  *  Halldór :   hjv6@hi.is
  *  Hrólfur :   hrolfur@hi.is
  *****************************************************************************/
@@ -23,24 +23,35 @@ import static org.junit.Assert.*;
 
 public class FlightControllerTest {
 
-    private Flight firstFlight, secondFlight, thirdFlight;
-    private FlightMock mockFlug;
+    private FlightController flightController;
 
     @Before
     public void setUp() {
-        mockFlug = new FlightMock();
-        firstFlight = mockFlug.getFlight(0);
-        secondFlight = mockFlug.getFlight(1);
-        thirdFlight = mockFlug.getFlight(2);
+        flightController = new FlightController();
     }
 
     @After
     public void tearDown() {
-        firstFlight = null;
-        secondFlight = null;
-        thirdFlight = null;
+        flightController = null;
     }
 
+    @Test
+    public void searchReturnsResultList() {
+        assertNotNull(flightController.getFlight("Reykjavík", "Akureyri", 27032022, 29032022));
+    }
+
+    @Test
+    public void searchReturnsEmptyList() {
+        Assert.assertEquals(List.of(), flightController.getFlight("Reykjavík", "Reykjavík", 27032022, 29032022));
+    }
+
+    @Test
+    void testExpectedException() {
+        ApplicationException thrown = Assertions.assertThrows(ApplicationException.class, () -> {
+            flightController.getFlight("Reykjavík", 5379417, 27032022, 29032022);
+        });
+    }
+}
     @Test
     public void testDeparture() {
         // Case 1: ???
