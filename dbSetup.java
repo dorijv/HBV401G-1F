@@ -35,7 +35,7 @@ public class dbSetup {
 	private static LocalDateTime endTime;
 	private static String[] destinations; // Líka f. departureLocation
 	private static String[] flugfelog;
-	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
+	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
 
 	private static void configureData() {
