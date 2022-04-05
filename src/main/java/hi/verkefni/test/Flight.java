@@ -16,13 +16,15 @@
 
 package hi.verkefni.test;
 
+import java.time.LocalDateTime;
+
 public class Flight {
 
     private int flightID;
     private String flightDeparture;
     private String flightDestination;
-    private String flightDate;
-    private String flightTime;
+    private LocalDateTime departureTime;
+    private LocalDateTime arrivalTime;
 
     /**
      * Constructs a Flight object with specified information.
@@ -30,16 +32,16 @@ public class Flight {
      * @param flightID Identifaction number
      * @param flightDeparture Departure
      * @param flightDestination Destination
-     * @param flightDate Date of flight
-     * @param flightTime Time of flight
+     * @param departureTime Time of departure. [YYYY-MM-DDTHH:MM:SS]
+     * @param arrivalTime Time of arrival. [YYYY-MM-DDTHH:MM:SS]
      */
     public Flight( int flightID, String flightDeparture, String flightDestination,
-                   String flightDate, String flightTime ) {
+                   LocalDateTime departureTime, LocalDateTime arrivalTime ) {
         this.flightID = flightID;
         this.flightDeparture = flightDeparture;
         this.flightDestination = flightDestination;
-        this.flightDate = flightDate;
-        this.flightTime = flightTime;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
     }
     public int getFlightID() {
         return flightID;
@@ -51,13 +53,5 @@ public class Flight {
 
     public String getFlightDestination() {
         return flightDestination;
-    }
-
-    public String getFlightDate() {
-        return flightDate;
-    }
-
-    public String getFlightTime() {
-        return flightTime;
     }
 }

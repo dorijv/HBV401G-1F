@@ -21,6 +21,38 @@ public class Flight {
         this.arrivalTime = arrivalTime;
         this.availableSeats = availableSeats;
         this.price = price;
+    }
 
+    public String getFlightID() {
+        return FlightID;
+    }
+
+    public String getDepartureLoc() {
+        return departureLoc;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public LocalDateTime getDepartureTime() {
+        return departureTime;
+    }
+
+    public LocalDateTime getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public String toString() {
+        return FlightID + " " + departureLoc + " " + destination + " " + departureTime + " " + arrivalTime +
+                " " + availableSeats + " " + price + " ";
     }
 }
