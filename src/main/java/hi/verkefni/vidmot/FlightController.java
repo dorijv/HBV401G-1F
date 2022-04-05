@@ -1,12 +1,8 @@
 package hi.verkefni.vidmot;
 
 import hi.verkefni.vinnsla.Flight;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
+
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -14,16 +10,30 @@ import java.util.Random;
 
 
 public class FlightController {
+    private static final float MAX_PRICE = 2147483647; // Maximum
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    private int MAXN = 7500;
-    public Flight[] flightList;
-    private ArrayList<Flight> testFlightList = new ArrayList<>();
+    private ArrayList<Flight> flightList = new ArrayList<>();
 
     public FlightController() {
-        flightList = new Flight[MAXN];
     }
 
-    public void getAllFlights() throws Exception {
+    // maxPrice, noOfTravelers, dagsetningu flugs og auðvitað hvaðan flugið á að koma
+    public ArrayList<Flight> getFlight(String dep, String dest) {
+        System.out.println("Ekki price!");
+        return flightList;
+    }
+
+    public ArrayList<Flight> getFlight(String dep, String dest, float maxPrice) {
+        System.out.println("price!");
+        return flightList;
+    }
+
+    public ArrayList<Flight> getFlight(String dep, String dest, float maxPrice, int travelers) {
+
+    }
+
+
+    public ArrayList<Flight> getAllFlights() throws Exception {
         // SELECT * FROM FLIGHTS;
         // Mögulega tæma flightListß
         // Hérna fylla upp flightList m. sql
@@ -41,7 +51,7 @@ public class FlightController {
             while (rs.next()) {
                 LocalDateTime temp1 = LocalDateTime.parse(rs.getString("arrivalTime"), formatter);
                 LocalDateTime temp2 = LocalDateTime.parse(rs.getString("departureTime"), formatter);
-                testFlightList.add(new Flight(rs.getString("FlightID"), rs.getString("departureLoc"),
+                flightList.add(new Flight(rs.getString("FlightID"), rs.getString("departureLoc"),
                         rs.getString("destination"), temp2, temp1,
                         rs.getInt("availableSeats"), rs.getFloat("price")));
             }
@@ -55,10 +65,10 @@ public class FlightController {
                 System.err.println(e.getMessage());
             }
         }
-        System.out.println(testFlightList.get(0).getFlightID());
-        for (Flight item : testFlightList) {
+        System.out.println(flightList.get(0).getFlightID());
+        for (Flight item : flightList) {
             System.out.println(item.toString());
         }
-        //return flightList;
+        return flightList;
     }
 }

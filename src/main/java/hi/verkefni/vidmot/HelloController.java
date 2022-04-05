@@ -12,5 +12,7 @@ public class HelloController {
     protected void onHelloButtonClick() throws Exception {
         welcomeText.setText("Welcome to JavaFX Application!");
         ft.getAllFlights();
+        ft.getFlight("kef","rey");
+        ft.getFlight("kef","kef",102);
     }
 }
