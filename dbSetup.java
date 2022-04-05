@@ -30,7 +30,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class dbSetup {
-	private static final int FASTI = 1000; // Breyta hér f. fjölda prufugagna
+	private static final int FASTI = 250; // Breyta hér f. fjölda prufugagna
 	private static LocalDateTime startTime;
 	private static LocalDateTime endTime;
 	private static String[] destinations; // Líka f. departureLocation
@@ -39,18 +39,16 @@ public class dbSetup {
 
 
 	private static void configureData() {
-		destinations = new String[] {"Reykjavík", "Akureyri", "Oslo", "Copenhagen",
-						"Malmö", "Katowice", "Gdansk", "Berlin", "New York",
-						"California", "Kyiv", "Moscow", "Frankfurt", "Munich",
-						"Rome", "London", "Vilnius", "Seattle", "Toronto", "Helsinki",
-						"Chicago", "Manchester", "Warsaw", "Riga", "Amsterdam"};
+		destinations = new String[] {"Reykjavík", "Akureyri", "Vestmannaeyjar",
+									"Kópavogur", "Ísafjörður", "Egilsstaðir",
+									"Sauðárkrókur", "Keflavík", "Njarðvík", "Grindavík"};
 
-		flugfelog = new String[] {"FI", "W", "LS", "AY", "BT", "OG"};
+		flugfelog = new String[] {"FI", "W", "IE", "AY", "BT", "OG", "PL"};
 		return;
 	}
 
 	private static LocalDateTime genRandTime(){
-		return LocalDateTime.now().plusMinutes((long)genRandNum(10, 10000)); // Fikta í tölum
+		return LocalDateTime.now().plusMinutes((long)genRandNum(10, 100000)); // Fikta í tölum
 	}
 
 	private static int genRandNum(int low, int high){
@@ -93,6 +91,7 @@ public class dbSetup {
 				flugnr = genRandNum(100, 999);
 				dep = destinations[depIndex];
 				dest = destinations[destIndex];
+				while (dep == dest) dest = destinations[genRandNum(0, fjoldiDest)];
 				flfelag = flugfelog[flugfelogIndex] + flugnr;
 				startTime = genRandTime();
 				endTime = startTime.plusMinutes((long)genRandNum(60, 600));
@@ -109,6 +108,7 @@ public class dbSetup {
 				pstmt.setFloat(7, genRandNum(10000, 1000000));
 				pstmt.executeUpdate();
 			}
+			//DELETE FROM FLIGHTS WHERE DESTINATION LIKE DEPARTURELOC;
 			if (!USE_AUTOCOMMIT) conn.commit();
 		} catch(SQLException e) {
 			System.err.println(e.getMessage());
