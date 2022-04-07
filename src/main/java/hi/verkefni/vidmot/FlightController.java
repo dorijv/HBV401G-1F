@@ -143,6 +143,7 @@ public class FlightController {
         // Random hash function
         NotSecureHash hasher = new NotSecureHash();
         String confirmationNO = hasher.generateHash(12);
+        int seats = 1;
 
 
         Class.forName("org.sqlite.JDBC");
@@ -164,6 +165,15 @@ public class FlightController {
             pstmt.setString(7, seatNr+"");
             pstmt.setString(8, confirmationNO);
             pstmt.executeUpdate();
+
+            String update = ("UPDATE Flights SET availableSeats = availableSeats-? WHERE FlightID LIKE ? AND departureTime LIKE ?");
+            PreparedStatement pstmt2  = conn.prepareStatement(update);
+            pstmt2.setInt(1, seats);
+            pstmt2.setString(2, flightID);
+            pstmt2.setString(3, departureTime.format(formatter));
+            pstmt2.executeUpdate();
+
+
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         } finally {
