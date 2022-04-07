@@ -166,7 +166,7 @@ public class FlightController {
             pstmt.setString(8, confirmationNO);
             pstmt.executeUpdate();
 
-            String update = ("UPDATE Flights SET availableSeats = availableSeats-? WHERE FlightID LIKE ? AND departureTime LIKE ?");
+            String update = "UPDATE Flights SET availableSeats = availableSeats-? WHERE FlightID LIKE ? AND departureTime LIKE ?";
             PreparedStatement pstmt2  = conn.prepareStatement(update);
             pstmt2.setInt(1, seats);
             pstmt2.setString(2, flightID);
