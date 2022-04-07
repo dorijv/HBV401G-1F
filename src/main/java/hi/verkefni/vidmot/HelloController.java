@@ -19,10 +19,11 @@ public class HelloController {
     @FXML
     protected void onHelloButtonClick() throws Exception {
         welcomeText.setText("Welcome to JavaFX Application!");
-        //ft.getFlight(fxDep.getText(), fxDest.getText());
+        ft.getFlight(fxDep.getText(), fxDest.getText());
         ArrayList<Flight> temp = ft.getFlight("Reykjavík", "Vestmannaeyjar");
         Flight tempp = temp.get(1);
-        System.out.println(ft.createBooking("2911963149", tempp.getFlightID(), tempp.getDepartureTime(),
+        System.out.println(ft.createBooking("2911963148", tempp.getFlightID(), tempp.getDepartureTime(),
                 "Vilhjálmsson", "Halldór"));
+        ft.findBooking("2911963149");
     }
 }

@@ -1,3 +1,8 @@
+/**
+ * Flugbókanakerfi HBV401G Hópur 1F
+ * Alda, Ármann, Halldór og Hrólfur
+ */
+
 package hi.verkefni.vinnsla;
 
 import java.time.LocalDateTime;
@@ -90,15 +95,15 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "Booking{" +
+        return "Booking item:\n" +
                 "SSN='" + SSN + '\'' +
                 ", flightID='" + flightID + '\'' +
                 ", departureTime=" + departureTime +
                 ", lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
+                " \nfirstName='" + firstName + '\'' +
                 ", rowNr=" + rowNr +
                 ", seatNr=" + seatNr +
                 ", confirmationNO=" + confirmationNO +
-                '}';
+                "\n";
     }
 }

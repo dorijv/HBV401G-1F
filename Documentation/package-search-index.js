@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"hi.verkefni.vidmot"},{"l":"hi.verkefni.vinnsla"}];updateSearchResults();

@@ -1,3 +1,8 @@
+/**
+ * Flugbókanakerfi HBV401G Hópur 1F
+ * Alda, Ármann, Halldór og Hrólfur
+ */
+
 package hi.verkefni.vinnsla;
 
 import java.time.LocalDateTime;
@@ -50,9 +55,23 @@ public class Flight {
     public float getPrice() {
         return price;
     }
-
+    /*
     public String toString() {
         return FlightID + " " + departureLoc + " " + destination + " " + departureTime + " " + arrivalTime +
                 " " + availableSeats + " " + price + " ";
+    }
+     */
+
+    @Override
+    public String toString() {
+        return "Flight item:\n" +
+                "FlightID='" + FlightID + '\'' +
+                ", departureLoc='" + departureLoc + '\'' +
+                ", destination='" + destination + '\'' +
+                ", departureTime=" + departureTime +
+                ",\n arrivalTime=" + arrivalTime +
+                ", availableSeats=" + availableSeats +
+                ", price=" + price +
+                "\n";
     }
 }
