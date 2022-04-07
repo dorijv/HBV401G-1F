@@ -22,5 +22,5 @@ CREATE TABLE Bookings (
     seat CHAR(1),
     confirmationNO VARCHAR(12),
     FOREIGN KEY(FlightId, departureTime) REFERENCES Flights(FlightID, departureTime),
-    PRIMARY KEY(SSN, FlightId)
+    PRIMARY KEY(SSN, FlightId, departureTime)
 );
