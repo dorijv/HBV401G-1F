@@ -5,8 +5,10 @@ Forrit sem frumstillir gagnagrunn.
 
 Til að keyra:
 
-Búa til sqlite3 gagnagrunn 1F.db
-Past-a Schema.sql í 1F.db
+Búa til sqlite3 gagnagrunn 1F.db í sömu möppu og þessi skrá
+Paste-a Schema.sql í 1F.db (Afrita úr schema.sql og paste-a í gagnagrunninn)
+- Einnig er hægt að keyra sqlite3 1F.db < Schema.sql
+- ATH: það þarf að hafa sqlite-jdbc skránna.
 Keyra java -cp sqlite-jdbc-3.36.0.3.jar dbSetup.java 0 0
 
 Forritið býr til handahófskennd flug með random gildum. Hægt er að breyta 
