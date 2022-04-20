@@ -19,3 +19,21 @@ inn ykkar eigið lib. ATH. það þarf ekki að gera neitt í run configurations
 Varðandi gagnagrunn fylgja leiðbeiningar í db.Setup.java skjalinu
 
 ATH JavaDoc í /Documentation/ möppunni. Opnið index.html
+
+<H1><Strong>NOTE</Strong></H1>
+We've removed most unutilized classes but in case the following should be looked at:
+FlightController - Main function
+Booking - Object
+Flight - Object
+NotSecureHash - For implementing booking number, as requested by T group
+BookingController - Controller made for test interface
+
+Following classes were omitted:
+Customer and CustomerController - Group T requested that they implement it
+BookingController - Implementing the few methods in FlightController was simpler.
+Payment - Since we did not implement anything related to customer, this seemed obscure
+            due to needing the customer base.
+
+About running the program:
+1F.db is basically run-ready, you will need to figure out how to implement JavaFX on your system.
+the test folder needs to be excluded in project structure.
