@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="194.0" prefWidth="248.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="hi.verkefni.vidmot.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <TextField fx:id="fxDep" />
-   <TextField fx:id="fxDest" />
-
-    <Label fx:id="welcomeText" />
-    <Button onAction="#onHelloButtonClick" text="Hello!" />
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.verkefni.vidmot.HelloController">
+   <children>
+      <Label layoutX="153.0" layoutY="14.0" prefHeight="59.0" prefWidth="362.0" text="Flight Assistant 2000">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <ListView fx:id="fxDisplayFlights" layoutX="314.0" layoutY="73.0" prefHeight="333.0" prefWidth="294.0" />
+      <Label layoutX="32.0" layoutY="88.0" text="From" />
+      <TextField fx:id="fxDep" layoutX="32.0" layoutY="105.0" />
+      <Label layoutX="31.0" layoutY="142.0" text="To" />
+      <TextField fx:id="fxDest" layoutX="32.0" layoutY="159.0" />
+      <Button fx:id="fxFlightButton" layoutX="32.0" layoutY="347.0" mnemonicParsing="false" onAction="#findFlightsHandler" prefHeight="27.0" prefWidth="161.0" text="Find flights" />
+      <Label layoutX="81.0" layoutY="209.0" prefHeight="17.0" prefWidth="49.0" text="Optional" textAlignment="CENTER" />
+      <Label layoutX="31.0" layoutY="231.0" text="Max Price" />
+      <Slider fx:id="fxPriceSlider" layoutX="36.0" layoutY="248.0" max="1000000.0" onDragDetected="#breytaValHandler" />
+      <Text fx:id="fxDispPrice" layoutX="193.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 EUR" />
+      <Label layoutX="31.0" layoutY="271.0" text="Minimum Seats" />
+      <TextField fx:id="fxSeats" layoutX="32.0" layoutY="288.0" prefHeight="27.0" prefWidth="54.0" text="1" />
+   </children>
+</AnchorPane>

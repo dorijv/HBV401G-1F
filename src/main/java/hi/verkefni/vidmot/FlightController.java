@@ -92,6 +92,8 @@ public class FlightController {
         // VINNSLA
         flightList.clear();
 
+        if (maxPrice == 0.0) maxPrice = MAX_PRICE;
+
         Class.forName("org.sqlite.JDBC");
 
         // Tenging
